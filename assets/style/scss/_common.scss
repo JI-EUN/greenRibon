@@ -1,0 +1,33 @@
+//variable
+$black-color: #000000;
+$white-color: #ffffff;
+$main-color: #ffffff;
+$sub-color: #ffffff;
+$gray-color: #ffffff;
+
+
+$screen-pc: 1440px;
+$screen-xs-pc: 1150px;
+$screen-mobile: 720px;
+
+
+//공통 class
+.d-flex{
+    display: flex;
+}
+.d-inline-block{
+    display: inline-block;
+}
+.d-block{
+    display: block;
+}
+
+
+.text-center{
+    text-align: center;
+}
+
+.container{
+    max-width: 1440px;
+    margin:0 auto;
+}
