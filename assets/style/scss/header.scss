@@ -1,0 +1,28 @@
+header{
+    padding:24px 0;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    .d-flex{
+        justify-content: space-between;
+        align-items: center;
+        .gnb{
+            a{
+                color:$gray-color;
+                font-size: 20px;
+                line-height: 25px;
+                letter-spacing: -3.5%;
+                font-weight: 700;
+                display: inline-block;
+                margin-left:40px;
+                &:first-child{
+                    margin-left: 0;
+                }
+                &:hover{
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}

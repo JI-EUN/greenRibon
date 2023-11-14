@@ -1,9 +1,11 @@
 //variable
 $black-color: #000000;
 $white-color: #ffffff;
-$main-color: #ffffff;
+$main-color: #29AD37;
 $sub-color: #ffffff;
-$gray-color: #ffffff;
+$gray-color: #B5B5B5;
+$footer-bg: #F8F8F8;
+$footer-gray: #777777;
 
 
 $screen-pc: 1440px;
@@ -11,6 +13,26 @@ $screen-xs-pc: 1150px;
 $screen-mobile: 720px;
 
 
+
+//font
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+*,body{
+    font-family: Pretendard,'Noto Sans KR', sans-serif;
+	font-weight: 500;
+}
+*{
+    box-sizing: border-box;
+}
+a{
+    color:#000000;
+    text-decoration: none;
+}
+button{
+    padding:0;
+    margin:0;
+    background: none;
+    border:none;
+}
 //공통 class
 .d-flex{
     display: flex;
@@ -28,6 +50,43 @@ $screen-mobile: 720px;
 }
 
 .container{
-    max-width: 1440px;
+    max-width: 1120px;
     margin:0 auto;
+}
+.img-wrap{
+    font-size: 0;
+}
+
+//colorclass
+.main-color-font{
+    color:$main-color;
+}
+
+//탭 컨텐츠
+.tab-btns{
+    button{
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 50px;
+        letter-spacing: -1.4px;
+        margin-right: 35px;
+        color:$gray-color;
+        cursor: pointer;
+        &.active{
+            color:$black-color;
+        }
+        &:last-child{
+            margin-right: 0;
+        }
+    }  
+}
+.tab-contents{
+    .tab-content{
+        opacity: 0;
+        display: none;
+        &.active{
+            opacity: 1;
+            display: block;
+        }
+    }
 }
