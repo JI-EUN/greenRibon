@@ -390,5 +390,81 @@
         }
     }
 }
+@media screen and (max-width:$screen-mobile){
+    .main-section{
+        height: 100vh;
+        h2{
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+    .main-goals{
+        .goals-text ul{
+            width: 100%;
+        }
+        .goals-nums{
+            ul{
+                padding:0;
+                li{
+                    strong{
+                        font-size: 34px;
+                    }
+                    &.customers{
+                        strong{
+                            font-size: 34px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .main-business{
+        .tab-contents{
+            .tab-content{
+                padding:0;
+                
+            }
+            .d-flex{
+                flex-direction: column;
+                .img-wrap{
+                    width: 100%;
+                }
+                .text-cont{
+                    width: 100%;
+                    p{
+                    }
+                }
+            }
+        }
+    }
+    .main-history{
+        .border-box{
+            overflow-x: hidden;
+            .tab-btns{
+                overflow-x: auto;
+            }
+        }
+        .tab-contents{
+            ol{
+                padding:0;
+            }
+        }
+    }
 
-
+    .main-news{
+        .news-lists{
+            width: 100%;
+        }
+    }
+    .main-contact{
+        .maps{
+            padding:0;
+            ul{
+                flex-direction: column;
+                li{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

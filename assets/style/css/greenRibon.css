@@ -104,6 +104,10 @@ button {
   font-size: 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 .main-color-font {
   color: #29AD37;
 }
@@ -150,6 +154,15 @@ button {
   height: 12px;
 }
 
+@media screen and (max-width: 720px) {
+  body {
+    overflow-x: hidden;
+  }
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
 header {
   padding: 24px 0;
   position: fixed;
@@ -197,6 +210,11 @@ header.scroll-active .d-flex .gnb a:hover {
   color: #000000;
 }
 
+@media screen and (max-width: 720px) {
+  header .gnb-wrap {
+    display: none;
+  }
+}
 footer {
   background-color: #F8F8F8;
   font-weight: 400;
@@ -625,6 +643,61 @@ footer .copy {
 }
 .main-contact .maps > div {
   margin-top: 38px;
+}
+
+@media screen and (max-width: 720px) {
+  .main-section {
+    height: 100vh;
+  }
+  .main-section h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .main-goals .goals-text ul {
+    width: 100%;
+  }
+  .main-goals .goals-nums ul {
+    padding: 0;
+  }
+  .main-goals .goals-nums ul li strong {
+    font-size: 34px;
+  }
+  .main-goals .goals-nums ul li.customers strong {
+    font-size: 34px;
+  }
+  .main-business .tab-contents .tab-content {
+    padding: 0;
+  }
+  .main-business .tab-contents .d-flex {
+    flex-direction: column;
+  }
+  .main-business .tab-contents .d-flex .img-wrap {
+    width: 100%;
+  }
+  .main-business .tab-contents .d-flex .text-cont {
+    width: 100%;
+  }
+  .main-history .border-box {
+    overflow-x: hidden;
+  }
+  .main-history .border-box .tab-btns {
+    overflow-x: auto;
+  }
+  .main-history .tab-contents ol {
+    padding: 0;
+  }
+  .main-news .news-lists {
+    width: 100%;
+  }
+  .main-contact .maps {
+    padding: 0;
+  }
+  .main-contact .maps ul {
+    flex-direction: column;
+  }
+  .main-contact .maps ul li {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=greenRibon.css.map */
