@@ -90,3 +90,21 @@ button{
         }
     }
 }
+.bar-list{
+    li{
+        position: relative;
+        &:first-child{
+            padding-left: 0 !important;
+            &::before{
+                display: none;
+            }
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 12px;
+
+        }
+    }
+}

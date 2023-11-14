@@ -1,45 +1,63 @@
 footer{
     background-color: $footer-bg;
     font-weight: 400;
-    padding:38px 0 222px 0 ;
+    padding:38px 0 100px 0 ;
     color:#777;
+    font-size: 16px;
+    letter-spacing: -0.4px;
     .footer-links{
         li{
             padding-left: 38px;
             position: relative;
             a{
-                font-size: 16px;
-                line-height: 24px;;
+                line-height: 24px;
+                color:#777;
             }
             &::before{
-                content: "";
-                position: absolute;
-                width: 2px;
-                height: 12px;
                 background-color:#c5c5c5;
                 left: 17px;
                 top: 6px;
                 border-radius: 5px;
             }
-            &:first-child{
-                padding-left:0;
-                &::before{
-                    display: none;
-                }
-            }
         }
     }
     .call-num{
+        margin:32px 0;
         strong{
             font-weight: 800;
             font-size: 24px;
             line-height: 36px;
-            letter-spacing: -0.4px;
             color:$black-color;
             border-bottom:2px solid $black-color;
-            span{
-                padding-left:11px;
+            margin-right:11px;
+        }
+    }
+    .footer-info{
+        line-height: 24px;
+        >p{
+            color: $black-color;
+            margin-bottom:9px;
+            line-height: 19.2px;
+        }
+        .company-info{
+            margin-bottom: 8px;
+            li{
+                padding-left: 26px;
+                &::before{
+                    background-color: #DDDDDD;
+                    left:12px;
+                    top:6px;
+                }
             }
         }
+        >div{
+            >p{
+                line-height: 24px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+    .copy{
+        margin-top:24px;
     }
 }

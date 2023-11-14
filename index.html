@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GreenRibbon</title>
+    <link rel="icon" href="https://home.green-ribbon.co.kr/favicon.svg">
     <link rel="stylesheet" href="./assets/style/css/greenRibon.css">
+    <script src="/assets/js/greenRibon.js" defer></script>
 </head>
 <body>
     <header>
         <div class="d-flex container">
             <h1 class="logo">
-                <a href="/"><img src="/assets/img/logo.png" alt="GreenRibon"></a>
+                <a href="/" class="img-wrap d-block">GreenRibbon</a>
             </h1>
             <div class="gnb-wrap">
                 <nav class="gnb">
@@ -57,29 +59,31 @@
                 </ul>
             </div>
             <div class="goals-nums">
-                <div class="container">
-                    <div class="d-flex">
-                        <h3 class="main-point-font">그린리본은 계속<br/><span class="main-color-font">성장</span>하고 있습니다.</h3>
-                        <span class="date">2023년 5월 기준</span>
+                <div class="bg-wrap">
+                    <div class="container">
+                        <div class="d-flex">
+                            <h3 class="main-point-font">그린리본은 계속<br/><span class="main-color-font">성장</span>하고 있습니다.</h3>
+                            <span class="date">2023년 5월 기준</span>
+                        </div>
+                        <ul>
+                            <li>
+                                <span>찾아준 보험금</span>
+                                <strong>9,999,999,999 원</strong>
+                            </li>
+                            <li>
+                                <span>매출</span>
+                                <strong>123,124,151 원</strong>
+                            </li>
+                            <li>
+                                <span>회원 수</span>
+                                <strong>760,000 명</strong>
+                            </li>
+                            <li class="customers">
+                                <span>협업 고객사</span>
+                                <strong>대구은행, 우리은행, IBK, 교보생명<br/>  DB손해보험, KCA손해사정, 하나손보</strong>
+                            </li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li>
-                            <span>찾아준 보험금</span>
-                            <strong>9,999,999,999 원</strong>
-                        </li>
-                        <li>
-                            <span>매출</span>
-                            <strong>123,124,151 원</strong>
-                        </li>
-                        <li>
-                            <span>회원 수</span>
-                            <strong>760,000 명</strong>
-                        </li>
-                        <li class="customers">
-                            <span>협업 고객사</span>
-                            <strong>대구은행, 우리은행, IBK, 교보생명<br/>  DB손해보험, KCA손해사정, 하나손보</strong>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </section> 
@@ -187,14 +191,14 @@
                     <li class="img-wrap"><img src="/assets/img/partnership8.png" alt=""></li>
                     <li class="img-wrap"><img src="/assets/img/partnership9.png" alt=""></li>
                     <li class="img-wrap"><img src="/assets/img/partnership10.png" alt=""></li>
-                    <li class="img-wrap"><img src="/assets/img/partnership1.png" alt=""></li>
-                    <li class="img-wrap"><img src="/assets/img/partnership1.png" alt=""></li>
-                    <li class="img-wrap"><img src="/assets/img/partnership1.png" alt=""></li>
-                    <li class="img-wrap"><img src="/assets/img/partnership1.png" alt=""></li>
-                    <li class="img-wrap"><img src="/assets/img/partnership1.png" alt=""></li>
-                    <li class="img-wrap"><img src="/assets/img/partnership1.png" alt=""></li>
-                    <li class="img-wrap"><img src="/assets/img/partnership1.png" alt=""></li>
-                    <li class="img-wrap"><img src="/assets/img/partnership1.png" alt=""></li>
+                    <li class="img-wrap"><img src="/assets/img/partnership11.png" alt=""></li>
+                    <li class="img-wrap"><img src="/assets/img/partnership12.png" alt=""></li>
+                    <li class="img-wrap"><img src="/assets/img/partnership13.png" alt=""></li>
+                    <li class="img-wrap"><img src="/assets/img/partnership14.png" alt=""></li>
+                    <li class="img-wrap"><img src="/assets/img/partnership15.png" alt=""></li>
+                    <li class="img-wrap"><img src="/assets/img/partnership16.png" alt=""></li>
+                    <li class="img-wrap"><img src="/assets/img/partnership17.png" alt=""></li>
+                    <li class="img-wrap"><img src="/assets/img/partnership18.png" alt=""></li>
                 </ul>
             </div>
         </section>
@@ -207,11 +211,13 @@
                             <span class="contact-small-font">서울연구소</span>
                             <p>서울 마포구 마포대로 122 프론트원 12층 1204 그린리본연구소</p>
                             <span class="eng-adderss">122, Mapo-daero, Mapo-gu, Seoul, Republic of Korea</span>
+                            <div class="map"></div>
                         </li>
                         <li>
                             <span class="contact-small-font">대전본사</span>
                             <p>대전 중구 중앙로 118, 소셜벤처캠퍼스 4층 409호 (주)그린리본</p>
                             <span class="eng-adderss">118, Jungang-ro, Jung-gu, Daejeon, Republic of Korea</span>
+                            <div class="map"></div>
                         </li>
                     </ul>
                     <div>
@@ -228,20 +234,29 @@
     </div>
     <footer>
         <div class="container">
-            <ul class="d-flex footer-links">
+            <ul class="d-flex footer-links bar-list">
                 <li><a href="">이용약관</a></li>
                 <li><a href="">개인정보처리방침</a></li>
                 <li><a href="">사업자정보확인</a></li>
                 <li><a href="">전자금융거래이용약관 </a></li>
             </ul>
             <div class="call-num">
-                <strong>대표번호 1660-2801</strong>
+                <strong class="d-inline-block">대표번호 1660-2801</strong>
                 <span>(운영시간 : 평일 09:00-18:00)</span>
             </div>
             <div class="footer-info">
                 <p>(주)그린리본(GREEN-RIBBON Corp.)</p>
+                <ul class="company-info d-flex bar-list">
+                    <li>대표 : 김규리</li>
+                    <li>사업자등록번호 : 377-86-01897</li>
+                </ul>
+                <div>
+                    <p>연구소 : 서울 마포구 마포대로 122 프론트원 12층 1204 그린리본연구소</p>
+                    <p>주소 : 대전 중구 중앙로 118, 소셜벤처캠퍼스 4층 407호 (주)그린리본</p>
+                    <p>메일주소 : greenribbon@green-ribbon.co.kr</p>
+                </div>
             </div>
-            <p>Copyright &copy; GreenRibbon. All rights reserved.</p>
+            <p class="copy">Copyright &copy; GreenRibbon. All rights reserved.</p>
         </div>
     </footer>
 </body>

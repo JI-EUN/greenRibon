@@ -72,9 +72,31 @@
         }
     }
     .goals-nums{
-        padding:596px 0;
-        background: $black-color;
+        position:relative;
+        padding:300px 0;
         color:$white-color;
+        &::before{
+            position: absolute;
+            content: "";
+            top:0;
+            height: 300px;
+            left:0;
+            width: 100%;    
+            background: linear-gradient(rgba(187, 187, 187, 0) 0%, rgb(0, 0, 0) 63.6%);;
+        }
+        &::after{
+            position: absolute;
+            content: "";
+            bottom:0;
+            height: 300px;
+            left:0;
+            width: 100%;  
+            transform: rotate( 180deg );
+            background: linear-gradient(rgba(187, 187, 187, 0) 0%, rgb(0, 0, 0) 63.6%);;;
+        }
+        .bg-wrap{
+            background-color: $black-color;
+        }
         .main-point-font{
             color: $white-color;
         }
@@ -282,6 +304,8 @@
     }
     .eng-adderss{
         color:#777;
+        display: block;
+        margin:12px 0 24px;
     }
     .maps{
         padding:0 96px;
@@ -291,6 +315,10 @@
             padding-bottom:26px;
             li{
                 width: 448px;
+                .map{
+                    height: 220px;
+                    background: $footer-gray;
+                }
             }
         }
         >div{
