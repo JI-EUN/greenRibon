@@ -148,11 +148,75 @@
     }
     .tab-contents{
         .tab-content{
+            margin-top:40px;
+            padding-left:89px;
             &.b2b-cont{
-                margin-top:44px;
+                //margin-top:44px;
+                .mySwiper{
+                    padding-bottom:64px;
+
+                }
+                .img-cont{
+                    b{
+                        display: block;
+                        margin-bottom: 56px;
+                        font-size: 24px;
+                        line-height: 30px;
+                        font-weight: 700;
+                    }
+                }
+                .nav-wrap{
+                    position: relative;
+                    display: flex;    
+                    justify-content: center;
+                    .nav-btn{
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        background-color: #F1F1F1;
+                    }
+                }
+                .swiper-pagination{
+                    bottom:0;   
+                     width: auto;
+                    position: relative;
+                    span{
+                        width: 32px;
+                        height: 32px;
+                        text-align: center;
+                        line-height:32px;
+                        background: transparent;
+                        &.swiper-pagination-bullet-active{
+                            font-weight: 700;
+                            color:$white-color;
+                            background-color: $main-color;
+                        }
+                    }
+                }
             }
             &.b2c-cont{
-                margin-top:40px;
+                //margin-top:40px;
+                .main-color-font{
+                    margin:24px 0 38px;
+                }
+                .appStoreBtns{
+                    display: flex;
+                    a{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 160px;
+                        height: 48px;
+                        border:1px solid #2E2C2F;
+                        border-radius: 8px;
+                        &:first-child{
+                            margin-right: 32px;
+                        }
+                        img{
+                            width: 98px;
+                        }
+                    }
+                }
             }
         }
         .d-flex{
@@ -326,3 +390,5 @@
         }
     }
 }
+
+

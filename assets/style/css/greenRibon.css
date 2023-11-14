@@ -108,7 +108,10 @@ button {
   color: #29AD37;
 }
 
-.tab-btns button {
+.tab-btns {
+  display: flex;
+}
+.tab-btns li a {
   font-weight: 700;
   font-size: 40px;
   line-height: 50px;
@@ -117,19 +120,17 @@ button {
   color: #B5B5B5;
   cursor: pointer;
 }
-.tab-btns button.active {
+.tab-btns li.is_on a {
   color: #000000;
 }
-.tab-btns button:last-child {
+.tab-btns li.is_on:last-child {
   margin-right: 0;
 }
 
 .tab-contents .tab-content {
-  opacity: 0;
   display: none;
 }
-.tab-contents .tab-content.active {
-  opacity: 1;
+.tab-contents .tab-content.is_on {
   display: block;
 }
 
@@ -403,11 +404,68 @@ footer .copy {
 .main-business .tab-btns {
   margin-top: 100px;
 }
-.main-business .tab-contents .tab-content.b2b-cont {
-  margin-top: 44px;
-}
-.main-business .tab-contents .tab-content.b2c-cont {
+.main-business .tab-contents .tab-content {
   margin-top: 40px;
+  padding-left: 89px;
+}
+.main-business .tab-contents .tab-content.b2b-cont .mySwiper {
+  padding-bottom: 64px;
+}
+.main-business .tab-contents .tab-content.b2b-cont .img-cont b {
+  display: block;
+  margin-bottom: 56px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+}
+.main-business .tab-contents .tab-content.b2b-cont .nav-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.main-business .tab-contents .tab-content.b2b-cont .nav-wrap .nav-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #F1F1F1;
+}
+.main-business .tab-contents .tab-content.b2b-cont .swiper-pagination {
+  bottom: 0;
+  width: auto;
+  position: relative;
+}
+.main-business .tab-contents .tab-content.b2b-cont .swiper-pagination span {
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  background: transparent;
+}
+.main-business .tab-contents .tab-content.b2b-cont .swiper-pagination span.swiper-pagination-bullet-active {
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #29AD37;
+}
+.main-business .tab-contents .tab-content.b2c-cont .main-color-font {
+  margin: 24px 0 38px;
+}
+.main-business .tab-contents .tab-content.b2c-cont .appStoreBtns {
+  display: flex;
+}
+.main-business .tab-contents .tab-content.b2c-cont .appStoreBtns a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 48px;
+  border: 1px solid #2E2C2F;
+  border-radius: 8px;
+}
+.main-business .tab-contents .tab-content.b2c-cont .appStoreBtns a:first-child {
+  margin-right: 32px;
+}
+.main-business .tab-contents .tab-content.b2c-cont .appStoreBtns a img {
+  width: 98px;
 }
 .main-business .tab-contents .d-flex {
   justify-content: center;

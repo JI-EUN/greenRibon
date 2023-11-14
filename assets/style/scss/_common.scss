@@ -64,28 +64,31 @@ button{
 
 //탭 컨텐츠
 .tab-btns{
-    button{
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 50px;
-        letter-spacing: -1.4px;
-        margin-right: 35px;
-        color:$gray-color;
-        cursor: pointer;
-        &.active{
-            color:$black-color;
+    display: flex;
+    li{
+        a{
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 50px;
+            letter-spacing: -1.4px;
+            margin-right: 35px;
+            color:$gray-color;
+            cursor: pointer;
+        } 
+        &.is_on{
+            a{
+                color:$black-color;
+            }
+            &:last-child{
+                margin-right: 0;
+            }
         }
-        &:last-child{
-            margin-right: 0;
-        }
-    }  
+    }
 }
 .tab-contents{
     .tab-content{
-        opacity: 0;
         display: none;
-        &.active{
-            opacity: 1;
+        &.is_on{
             display: block;
         }
     }
