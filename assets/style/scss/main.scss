@@ -466,6 +466,45 @@
         }
     }
 }
+
+
+@media screen and (max-width:$screen-xs-pc){
+    .main-goals{
+        .goals-nums{
+            ul{
+                padding-left:0;
+                li{
+                    strong{
+                        font-size: 96px;
+                    }
+                }
+            }
+        }
+    }
+    .main-news{
+        .news-lists{
+            width: 100%;
+        }
+    }
+    .main-partnership{
+        ul{
+            li{
+                width: 28%;
+                margin-right: 0;
+            }
+        }
+    }
+    .main-contact{
+        .maps{
+            padding:0;
+            ul{
+                li{
+                    width: 48%;
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width:$screen-mobile){
     .main-section{
         height: 100vh;
@@ -629,7 +668,6 @@
     .main-news{
         padding:80px 0;
         .news-lists{
-            width: 100%;
             margin-top:32px;
             a{
                 padding:16px 0;

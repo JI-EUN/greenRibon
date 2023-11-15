@@ -9,6 +9,7 @@ $footer-gray: #777777;
 
 
 $screen-pc: 1440px;
+$screen-xs-pc: 1120px;
 $screen-mobile: 720px;
 
 
@@ -113,12 +114,14 @@ img{
     }
 }
 
-@media screen and (max-width:$screen-mobile){
-    body{
-        overflow-x: hidden;
-    }
+@media screen and (max-width:$screen-xs-pc){
     .container{
         width: 100%;
         padding:0 16px;
+    }
+}
+@media screen and (max-width:$screen-mobile){
+    body{
+        overflow-x: hidden;
     }
 }
