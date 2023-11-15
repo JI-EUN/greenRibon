@@ -8,6 +8,28 @@
     }
   });
 
+  const gnbBtn = document.querySelector(".hamburger-icon");
+  gnbBtn.addEventListener("click", function () {
+    if (!gnbBtn.classList.contains("open")) {
+      gnbBtn.classList.add("open");
+      document.body.classList.add("gnb-open");
+    } else {
+      gnbBtn.classList.remove("open");
+      document.body.classList.remove("gnb-open");
+    }
+  });
+
+  //모바일 gnb
+  const gnbLinks = document.querySelectorAll(".gnb a");
+  gnbLinks.forEach(function (gnbLink) {
+    gnbLink.addEventListener("click", function () {
+      if (gnbBtn.classList.contains("open")) {
+        gnbBtn.classList.remove("open");
+        document.body.classList.remove("gnb-open");
+      }
+    });
+  });
+
   const tabBtns = document.querySelectorAll(".tab-btns button");
   const tabContents = document.querySelectorAll(".tab-contents .tab-content");
   tabBtns.forEach(function (tabBtn, i) {

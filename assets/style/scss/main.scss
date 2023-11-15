@@ -1,12 +1,13 @@
 //그린리본
 .main-section{
     width: 100%;
-    height: 1000px;
+    height: 100vh;
     display: flex;    
     align-items: center;
     justify-content: center;
     background:url('/assets/img/main-section-bg.png') no-repeat 50%;
     background-size: cover;
+    position: relative;
     h2{
         font-size: 56px;
         line-height: 84px;
@@ -14,6 +15,37 @@
         font-weight: 800;
         color:$white-color;
     }
+    .icon-scroll{
+        position: absolute;
+        font-size: 0;
+        text-indent: -9999px;
+        width:  32px;
+        height: 16px;
+        background: url('/assets/img/scrollIcon.svg') no-repeat 50%;
+        background-size: contain;
+        bottom:33px;
+        left:0;
+        right:0;
+        margin:0 auto;
+        animation: mover 0.8s infinite alternate;
+    }
+}
+
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
 }
 //메인 공통 폰트
 .main-point-font{
@@ -381,10 +413,17 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        margin-top:64px;
+        margin:64px auto 0;
+        padding:0 26px;
         li{
             width: 188px;
             height: 100px;
+            margin-right: 32px;
+            &:nth-child(9),
+            &:nth-child(14),
+            &:nth-child(18){
+                margin-right: 0;
+            }
         }
     }
 }
@@ -602,6 +641,15 @@
                 span{
                     font-size: 12px;
                     line-height: 16.44px;;
+                    .date{
+                        padding-left:13px;
+                        &::before{
+                            width: 3px;
+                            height: 3px;
+                            left:5px;
+                            top:7px;
+                        }
+                    }
                 }
                 &:hover,
                 &:active{
@@ -615,10 +663,15 @@
         background-color:#F1F1F1;
         ul{
             margin-top: 32px;
+            padding:0;
             justify-content: space-around;;
             li{
                 width: 100px;
                 height: 54px;
+                margin-right: 14px !important;
+                &:nth-child(3n){
+                    margin-right: 0 !important;
+                }
             }
         }
     }

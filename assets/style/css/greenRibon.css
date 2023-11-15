@@ -178,6 +178,9 @@ header .logo a {
   text-indent: -99999px;
   background: url("/assets/img/logo.png");
 }
+header .hamburger-icon {
+  display: none;
+}
 header .d-flex {
   justify-content: space-between;
   align-items: center;
@@ -217,6 +220,70 @@ header.scroll-active .d-flex .gnb a:hover {
   header .gnb-wrap {
     display: none;
   }
+  header .hamburger-icon {
+    display: block;
+    width: 20px;
+    height: 18px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  header .hamburger-icon span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+  header .hamburger-icon span:nth-child(1) {
+    top: 0px;
+  }
+  header .hamburger-icon span:nth-child(2), header .hamburger-icon span:nth-child(3) {
+    top: 8px;
+  }
+  header .hamburger-icon span:nth-child(1) {
+    top: 16px;
+  }
+  header .hamburger-icon.open span:nth-child(1) {
+    top: 8px;
+    width: 0%;
+    left: 50%;
+  }
+  header .hamburger-icon.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  header .hamburger-icon.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  header .hamburger-icon.open span:nth-child(4) {
+    top: 8px;
+    width: 0%;
+    left: 50%;
+  }
   header .logo {
     margin-left: 4px;
   }
@@ -224,6 +291,44 @@ header.scroll-active .d-flex .gnb a:hover {
     width: 123px;
     height: 24px;
     background: url("/assets/img/logo-m.png") no-repeat 50%;
+  }
+  header.scroll-active .hamburger-icon span {
+    background-color: #000000;
+  }
+  .gnb-open {
+    overflow-y: hidden;
+  }
+  .gnb-open header .hamburger-icon {
+    position: relative;
+    z-index: 99;
+  }
+  .gnb-open header .hamburger-icon span {
+    background-color: #29AD37;
+  }
+  .gnb-open header .gnb-wrap {
+    position: fixed;
+    z-index: 9;
+    display: block;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100vh;
+  }
+  .gnb-open header .gnb-wrap .gnb {
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+  }
+  .gnb-open header .gnb-wrap .gnb a {
+    margin-left: 0;
+    display: inline-block;
+    margin-bottom: 40px;
+    color: #000000;
+  }
+  .gnb-open header .gnb-wrap .gnb a:hover {
+    color: #29AD37;
   }
 }
 footer {
@@ -382,12 +487,13 @@ footer .footer-copy-wrap .sns a:last-child {
 }
 .main-section {
   width: 100%;
-  height: 1000px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: url("/assets/img/main-section-bg.png") no-repeat 50%;
   background-size: cover;
+  position: relative;
 }
 .main-section h2 {
   font-size: 56px;
@@ -396,7 +502,37 @@ footer .footer-copy-wrap .sns a:last-child {
   font-weight: 800;
   color: #ffffff;
 }
+.main-section .icon-scroll {
+  position: absolute;
+  font-size: 0;
+  text-indent: -9999px;
+  width: 32px;
+  height: 16px;
+  background: url("/assets/img/scrollIcon.svg") no-repeat 50%;
+  background-size: contain;
+  bottom: 33px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  animation: mover 0.8s infinite alternate;
+}
 
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
 .main-point-font {
   font-weight: 800;
   line-height: 54.8px;
@@ -736,11 +872,16 @@ footer .footer-copy-wrap .sns a:last-child {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-top: 64px;
+  margin: 64px auto 0;
+  padding: 0 26px;
 }
 .main-partnership ul li {
   width: 188px;
   height: 100px;
+  margin-right: 32px;
+}
+.main-partnership ul li:nth-child(9), .main-partnership ul li:nth-child(14), .main-partnership ul li:nth-child(18) {
+  margin-right: 0;
 }
 
 .main-contact {
@@ -948,6 +1089,15 @@ footer .footer-copy-wrap .sns a:last-child {
     font-size: 12px;
     line-height: 16.44px;
   }
+  .main-news .news-lists a span .date {
+    padding-left: 13px;
+  }
+  .main-news .news-lists a span .date::before {
+    width: 3px;
+    height: 3px;
+    left: 5px;
+    top: 7px;
+  }
   .main-news .news-lists a:hover, .main-news .news-lists a:active {
     background-color: #F1F1F1;
   }
@@ -957,11 +1107,16 @@ footer .footer-copy-wrap .sns a:last-child {
   }
   .main-partnership ul {
     margin-top: 32px;
+    padding: 0;
     justify-content: space-around;
   }
   .main-partnership ul li {
     width: 100px;
     height: 54px;
+    margin-right: 14px !important;
+  }
+  .main-partnership ul li:nth-child(3n) {
+    margin-right: 0 !important;
   }
   .main-contact {
     padding: 80px 0 100px 0;
