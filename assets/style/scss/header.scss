@@ -55,8 +55,18 @@ header{
 
 @media screen and (max-width:$screen-mobile){
     header{
+        padding:16px 0;
         .gnb-wrap{
             display: none;
+
+        }
+        .logo{
+            margin-left:4px;
+            a{
+                width: 123px;
+                height: 24px;
+                background: url('/assets/img/logo-m.png') no-repeat 50%;
+            }
         }
     }
 }

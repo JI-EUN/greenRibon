@@ -160,7 +160,7 @@ img {
   }
   .container {
     width: 100%;
-    padding: 0 10px;
+    padding: 0 16px;
   }
 }
 header {
@@ -211,8 +211,19 @@ header.scroll-active .d-flex .gnb a:hover {
 }
 
 @media screen and (max-width: 720px) {
+  header {
+    padding: 16px 0;
+  }
   header .gnb-wrap {
     display: none;
+  }
+  header .logo {
+    margin-left: 4px;
+  }
+  header .logo a {
+    width: 123px;
+    height: 24px;
+    background: url("/assets/img/logo-m.png") no-repeat 50%;
   }
 }
 footer {
@@ -391,7 +402,10 @@ footer .copy {
   padding: 120px 0 0 96px;
 }
 .main-goals .goals-nums ul li {
-  margin-bottom: 88px;
+  margin-top: 88px;
+}
+.main-goals .goals-nums ul li:first-child {
+  margin-top: 0;
 }
 .main-goals .goals-nums ul li span {
   display: block;
@@ -406,9 +420,6 @@ footer .copy {
   font-size: 102px;
   line-height: 139.74px;
   letter-spacing: -2.04px;
-}
-.main-goals .goals-nums ul li.customers {
-  margin-bottom: 0;
 }
 .main-goals .goals-nums ul li.customers strong {
   font-size: 60px;
@@ -426,9 +437,6 @@ footer .copy {
   margin-top: 40px;
   padding-left: 89px;
 }
-.main-business .tab-contents .tab-content.b2b-cont .mySwiper {
-  padding-bottom: 64px;
-}
 .main-business .tab-contents .tab-content.b2b-cont .img-cont b {
   display: block;
   margin-bottom: 56px;
@@ -440,6 +448,7 @@ footer .copy {
   position: relative;
   display: flex;
   justify-content: center;
+  margin-top: 32px;
 }
 .main-business .tab-contents .tab-content.b2b-cont .nav-wrap .nav-btn {
   width: 32px;
@@ -545,6 +554,7 @@ footer .copy {
   width: 40px;
   text-align: right;
   margin-right: 34px;
+  flex-shrink: 0;
 }
 
 .main-news {
@@ -565,6 +575,7 @@ footer .copy {
   font-size: 24px;
   line-height: 32.88px;
   margin-bottom: 12px;
+  word-break: keep-all;
 }
 .main-news .news-lists a span {
   color: #B5B5B5;
@@ -653,20 +664,90 @@ footer .copy {
     font-size: 24px;
     line-height: 32px;
   }
+  .main-point-font {
+    font-size: 24px;
+    letter-spacing: -0.48px;
+    line-height: 32.88px;
+  }
+  .main-goals {
+    padding-top: 60px;
+  }
   .main-goals .goals-text ul {
     width: 100%;
+    margin-top: 32px;
+  }
+  .main-goals .goals-text ul li {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  .main-goals .goals-text ul li > div {
+    width: 100%;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+  }
+  .main-goals .goals-text ul li > div::before {
+    top: 100%;
+    right: 0;
+    width: 100%;
+  }
+  .main-goals .goals-text ul li > div strong {
+    font-size: 24px;
+    line-height: 30px;
+    background: transparent;
+  }
+  .main-goals .goals-text ul li > p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .main-goals .goals-nums {
+    padding: 100px 0;
+  }
+  .main-goals .goals-nums::before, .main-goals .goals-nums::after {
+    height: 100px;
+  }
+  .main-goals .goals-nums .d-flex .date {
+    font-size: 12px;
+    line-height: 16.44px;
   }
   .main-goals .goals-nums ul {
     padding: 0;
+    margin-top: 60px;
+  }
+  .main-goals .goals-nums ul li {
+    margin-top: 44px;
+  }
+  .main-goals .goals-nums ul li span {
+    font-size: 14px;
+    line-height: 19.18px;
+    letter-spacing: -0.28px;
   }
   .main-goals .goals-nums ul li strong {
     font-size: 34px;
+    line-height: 46.58px;
   }
-  .main-goals .goals-nums ul li.customers strong {
-    font-size: 34px;
+  .main-goals .goals-nums ul li.customers {
+    display: none;
+  }
+  .main-business {
+    padding: 64px 0 0;
+  }
+  .main-business .tab-btns {
+    margin-top: 40px;
+  }
+  .main-business .tab-btns li {
+    margin-right: 24px;
+  }
+  .main-business .tab-btns li:last-child {
+    margin-right: 0;
+  }
+  .main-business .tab-btns li a {
+    font-size: 32px;
+    line-height: 40px;
+    margin-right: 0;
   }
   .main-business .tab-contents .tab-content {
     padding: 0;
+    margin-top: 30px;
   }
   .main-business .tab-contents .d-flex {
     flex-direction: column;
@@ -677,26 +758,109 @@ footer .copy {
   .main-business .tab-contents .d-flex .text-cont {
     width: 100%;
   }
+  .main-business .tab-contents .d-flex .text-cont b {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 6px;
+  }
+  .main-business .tab-contents .d-flex .text-cont p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .main-history {
+    padding-top: 100px;
+    border-bottom: 1px solid #F1F1F1;
+  }
   .main-history .border-box {
     overflow-x: hidden;
+    margin-top: 40px;
   }
   .main-history .border-box .tab-btns {
     overflow-x: auto;
   }
   .main-history .tab-contents ol {
-    padding: 0;
+    padding: 0 0 60px 0;
+  }
+  .main-history .tab-contents ol li {
+    margin-top: 32px;
+  }
+  .main-history .tab-contents ol li span {
+    font-size: 16px;
+    line-height: 21.92px;
+    width: 35px;
+  }
+  .main-history .tab-contents ol li p {
+    font-size: 16px;
+    line-height: 21.92px;
+  }
+  .main-news {
+    padding: 80px 0 0 0;
   }
   .main-news .news-lists {
     width: 100%;
+    margin-top: 32px;
+  }
+  .main-news .news-lists a {
+    padding: 16px 0;
+  }
+  .main-news .news-lists a p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 21.92px;
+  }
+  .main-news .news-lists a span {
+    font-size: 12px;
+    line-height: 16.44px;
+  }
+  .main-news .news-lists a:hover, .main-news .news-lists a:active {
+    background-color: #F1F1F1;
+  }
+  .main-partnership {
+    padding: 80px 0;
+    background-color: #F1F1F1;
+  }
+  .main-partnership ul {
+    margin-top: 32px;
+    justify-content: space-around;
+  }
+  .main-partnership ul li {
+    width: 100px;
+    height: 54px;
+  }
+  .main-contact {
+    padding: 80px 0 100px 0;
+  }
+  .main-contact .contact-small-font {
+    font-size: 14px;
+    line-height: 19.18px;
+  }
+  .main-contact p {
+    font-size: 16px;
+    line-height: 21.92px;
+  }
+  .main-contact .eng-adderss {
+    margin: 8px 0 16px;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.4px;
   }
   .main-contact .maps {
     padding: 0;
+    margin-top: 32px;
   }
   .main-contact .maps ul {
     flex-direction: column;
+    padding-bottom: 16px;
   }
   .main-contact .maps ul li {
     width: 100%;
+    margin-top: 48px;
+  }
+  .main-contact .maps ul li:first-child {
+    margin-top: 0;
+  }
+  .main-contact .maps > div {
+    margin-top: 24px;
   }
 }
 
