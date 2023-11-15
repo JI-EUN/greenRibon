@@ -57,7 +57,101 @@ footer{
             }
         }
     }
-    .copy{
-        margin-top:24px;
+    .footer-copy-wrap{
+        margin-top:10px;
+        justify-content: space-between;
+        align-items: flex-end;
+        .sns{
+            a{
+                display: block;
+                width: 32px;
+                height: 32px;
+                margin-right: 24px;
+                @for $i from 1 through 4{
+                    &.sns-#{$i}{
+                    background-image: url("/assets/img/sns-#{$i}.svg");
+                        background-size: contain;
+                    }
+                }
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width:$screen-mobile){
+    footer{
+        padding:40px 0;
+        .footer-links{
+            flex-direction: column;
+            li{
+                padding-left: 0;
+                margin-bottom:8px;
+                &::before{
+                    display: none;
+                }
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                a{
+                    font-size: 14px;
+                    line-height: 24px;
+                    padding:4px;;
+                }
+            }
+        }
+        .call-num{
+           margin:48px 0 32px;
+            strong{
+                font-size: 20px;
+                line-height: 21px;
+
+            }
+            span{
+                display: block;
+                margin-top:8px;
+            }
+        }
+        .footer-info{
+            >p{
+                font-size: 14px;
+                line-height: 21px;
+                margin-bottom: 8px;;
+            }
+            .company-info{
+                margin-bottom: 8px;;
+                li{
+                    font-size: 12px;
+                    line-height: 18px;
+                    padding-left:17px;
+                    &::before{
+                        left:8px;
+                    }
+                }
+            }
+            >div{
+                >p{
+                    font-size: 12px;
+                    line-height: 18px;
+                    margin-bottom: 8px;;
+                }
+            }
+        }
+        .footer-copy-wrap{
+            margin-top: 32px;
+            flex-direction: column;
+            align-items: flex-start;
+            .copy{
+                font-size: 12px;
+                line-height: 22px;
+            }
+            .sns {
+                margin-top: 32px;
+            }
+        }
     }
 }

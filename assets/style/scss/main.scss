@@ -144,7 +144,7 @@
 }
 
 .main-business{
-    padding:84px 0 160px;
+    padding:84px 0 0;
     .tab-btns{
         margin-top:100px;
     }
@@ -177,6 +177,23 @@
                         height: 32px;
                         border-radius: 50%;
                         background-color: #F1F1F1;
+                        position: relative;
+                        cursor: pointer;
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            top:50%;
+                            left:50%;
+                            margin-left:-3px;
+                            margin-top:-6px;
+                            width: 6px;
+                            height: 12px;
+                            background: url('/assets/img/pagenation-arrow.svg') no-repeat 50%;
+                            background-size: contain;
+                        }
+                        &.nav-next{
+                            transform: rotate(180deg);
+                        }
                     }
                 }
                 .swiper-pagination{
@@ -189,6 +206,10 @@
                         text-align: center;
                         line-height:32px;
                         background: transparent;
+                        margin:0 0 0 8px;
+                        &:last-child{
+                            margin-right: 8px;
+                        }
                         &.swiper-pagination-bullet-active{
                             font-weight: 700;
                             color:$white-color;
@@ -201,6 +222,15 @@
                 //margin-top:40px;
                 .main-color-font{
                     margin:24px 0 38px;
+                    display: flex;
+                    align-items: center;
+                    .arrow-icon{
+                        width: 12px;
+                        height: 6px;
+                        background: url('/assets/img/arrow-icon.svg') no-repeat;
+                        background-size: contain;
+                        margin-left: 7px;
+                    }
                 }
                 .appStoreBtns{
                     display: flex;
@@ -253,6 +283,7 @@
 }
 
 .main-history{
+    padding-top:160px;
     .border-box{
         border-bottom:1px solid #F1F1F1;
         padding-bottom:12px;
@@ -333,7 +364,8 @@
                     }
                 }
             }
-            &:hover{
+            &:hover,
+            &:active{
                 p{
                     color: $main-color;;
                 }
@@ -474,7 +506,7 @@
         }
     }
     .main-business{
-        padding:64px 0 0;
+        padding:100px 0 0;
         .tab-btns{
             margin-top:40px;
             li{
@@ -492,13 +524,24 @@
         .tab-contents{
             .tab-content{
                 padding:0;
-                margin-top:30px
+                margin-top:30px;
+                &.b2c-cont{
+                    .main-color-font{
+                        justify-content: center;
+                        width: 156px;
+                        line-height: 39px;;
+                        height: 41px;;
+                        border:1px solid $main-color;
+                        border-radius:24px ;
+                    }
+                }
                 
             }
             .d-flex{
                 flex-direction: column;
                 .img-wrap{
                     width: 100%;
+                    margin-bottom:30px;
                 }
                 .text-cont{
                     width: 100%;
@@ -545,7 +588,7 @@
     }
 
     .main-news{
-        padding:80px 0 0 0;
+        padding:80px 0;
         .news-lists{
             width: 100%;
             margin-top:32px;
