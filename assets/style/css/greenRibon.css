@@ -63,6 +63,10 @@ table {
   font-weight: 500;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -152,6 +156,154 @@ img {
   position: absolute;
   width: 2px;
   height: 12px;
+}
+
+.animate-hidden-box {
+  overflow: hidden;
+}
+
+.back-to-position {
+  opacity: 0;
+  transition-duration: 1s;
+}
+.back-to-position.delay-1s {
+  transition-delay: 0.1s;
+}
+.back-to-position.duration-1s {
+  transition-duration: 0.1s;
+}
+.back-to-position.delay-2s {
+  transition-delay: 0.2s;
+}
+.back-to-position.duration-2s {
+  transition-duration: 0.2s;
+}
+.back-to-position.delay-3s {
+  transition-delay: 0.3s;
+}
+.back-to-position.duration-3s {
+  transition-duration: 0.3s;
+}
+.back-to-position.delay-4s {
+  transition-delay: 0.4s;
+}
+.back-to-position.duration-4s {
+  transition-duration: 0.4s;
+}
+.back-to-position.delay-5s {
+  transition-delay: 0.5s;
+}
+.back-to-position.duration-5s {
+  transition-duration: 0.5s;
+}
+.back-to-position.delay-6s {
+  transition-delay: 0.6s;
+}
+.back-to-position.duration-6s {
+  transition-duration: 0.6s;
+}
+.back-to-position.delay-7s {
+  transition-delay: 0.7s;
+}
+.back-to-position.duration-7s {
+  transition-duration: 0.7s;
+}
+.back-to-position.delay-8s {
+  transition-delay: 0.8s;
+}
+.back-to-position.duration-8s {
+  transition-duration: 0.8s;
+}
+.back-to-position.delay-9s {
+  transition-delay: 0.9s;
+}
+.back-to-position.duration-9s {
+  transition-duration: 0.9s;
+}
+.back-to-position.delay-10s {
+  transition-delay: 1s;
+}
+.back-to-position.duration-10s {
+  transition-duration: 1s;
+}
+.back-to-position.delay-11s {
+  transition-delay: 1.1s;
+}
+.back-to-position.duration-11s {
+  transition-duration: 1.1s;
+}
+.back-to-position.delay-12s {
+  transition-delay: 1.2s;
+}
+.back-to-position.duration-12s {
+  transition-duration: 1.2s;
+}
+.back-to-position.delay-13s {
+  transition-delay: 1.3s;
+}
+.back-to-position.duration-13s {
+  transition-duration: 1.3s;
+}
+.back-to-position.delay-14s {
+  transition-delay: 1.4s;
+}
+.back-to-position.duration-14s {
+  transition-duration: 1.4s;
+}
+.back-to-position.delay-15s {
+  transition-delay: 1.5s;
+}
+.back-to-position.duration-15s {
+  transition-duration: 1.5s;
+}
+.back-to-position.delay-16s {
+  transition-delay: 1.6s;
+}
+.back-to-position.duration-16s {
+  transition-duration: 1.6s;
+}
+.back-to-position.delay-17s {
+  transition-delay: 1.7s;
+}
+.back-to-position.duration-17s {
+  transition-duration: 1.7s;
+}
+.back-to-position.delay-18s {
+  transition-delay: 1.8s;
+}
+.back-to-position.duration-18s {
+  transition-duration: 1.8s;
+}
+.back-to-position.delay-19s {
+  transition-delay: 1.9s;
+}
+.back-to-position.duration-19s {
+  transition-duration: 1.9s;
+}
+.back-to-position.delay-20s {
+  transition-delay: 2s;
+}
+.back-to-position.duration-20s {
+  transition-duration: 2s;
+}
+.back-to-position.to-top {
+  transform: translateY(70px);
+}
+.back-to-position.to-right {
+  transform: translateX(-150px);
+}
+.back-to-position.to-left {
+  transform: translateX(70px);
+}
+
+.show .back-to-position {
+  opacity: 1;
+}
+.show .back-to-position.to-top {
+  transform: translateY(0px);
+}
+.show .back-to-position.to-right, .show .back-to-position.to-left {
+  transform: translateX(0px);
 }
 
 @media screen and (max-width: 1120px) {
@@ -660,7 +812,7 @@ footer .footer-copy-wrap .sns a:last-child {
 }
 
 .main-business {
-  padding: 84px 0 0;
+  padding: 160px 0 0;
 }
 .main-business .tab-btns {
   margin-top: 100px;

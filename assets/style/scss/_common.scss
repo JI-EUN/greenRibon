@@ -20,6 +20,11 @@ $screen-mobile: 720px;
     font-family: Pretendard,'Noto Sans KR', sans-serif;
 	font-weight: 500;
 }
+
+//전체 설정
+html{
+    scroll-behavior: smooth;
+}
 *{
     box-sizing: border-box;
 }
@@ -110,6 +115,42 @@ img{
             width: 2px;
             height: 12px;
 
+        }
+    }
+}
+//animate 기본설정
+.animate-hidden-box{
+    overflow: hidden;
+}
+.back-to-position{
+    opacity: 0;
+    transition-duration: 1s;
+    @for $i from 1 through 20{
+        &.delay-#{$i}s{
+            transition-delay : ($i * 0.1s);
+        }
+        &.duration-#{$i}s{
+            transition-duration:($i * 0.1s);
+        }
+    }
+    &.to-top{
+        transform:translateY(70px);
+    }
+    &.to-right{
+        transform:translateX(-150px);
+    }
+    &.to-left{
+        transform:translateX(70px);
+    }
+}
+.show{
+    .back-to-position{
+        opacity: 1;
+        &.to-top{
+            transform:translateY(0px);
+        }
+        &.to-right,&.to-left{
+            transform:translateX(0px);
         }
     }
 }

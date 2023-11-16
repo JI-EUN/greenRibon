@@ -115,7 +115,6 @@
     },
   });
 
-
   var mapContainer = document.getElementById("map-seoul"), // 지도를 표시할 div
     mapOption = {
       center: new kakao.maps.LatLng(37.5455, 126.9526), // 지도의 중심좌표
@@ -144,37 +143,74 @@
 
   marker2.setMap(map2);
 
+  //main Motion
+  const spyEls = document.querySelectorAll(".scroll-spy");
+  spyEls.forEach(function (spyEl) {
+    new ScrollMagic.Scene({
+      triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+      triggerHook: 0.5,
+    })
+      .setClassToggle(spyEl, "show")
+      .addTo(new ScrollMagic.Controller());
+  });
 
+  function numberWithCommas(n) {
+    var parts = n.toString().split(".");
+    return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 
+  const valueInfo = [
+    {
+      text: document.querySelector(".goals-nums .num1"),
+      vlaue: document
+        .querySelector(".goals-nums .num1")
+        .getAttribute("data-num"),
+      speed: 100,
+      aniSpeed: 7,
+    },
+    {
+      text: document.querySelector(".goals-nums .num2"),
+      vlaue: document
+        .querySelector(".goals-nums .num2")
+        .getAttribute("data-num"),
+      speed: 100,
+      aniSpeed: 7,
+    },
+    {
+      text: document.querySelector(".goals-nums .num3"),
+      vlaue: document
+        .querySelector(".goals-nums .num3")
+        .getAttribute("data-num"),
+      speed: 200,
+      aniSpeed: 0.5,
+    },
+  ];
+  const counters = document.querySelectorAll(".goals-nums .count-num");
+  counters.forEach(function (counter, number) {
+    new ScrollMagic.Scene({
+      triggerElement: counter, // 보여짐 여부를 감시할 요소를 지정
+      triggerHook: 0.9,
+      reverse: false,
+    })
+      .on("enter", () => {
+        const animate = () => {
+          const value = +valueInfo[number].vlaue;
+          const data = +valueInfo[number].text.innerText;
+          const time = value / valueInfo[number].speed;
 
-
-  function numberCounter(target_frame, target_number) {
-    this.count = 0; this.diff = 0;
-    this.target_count = parseInt(target_number);
-    this.target_frame = document.getElementById(target_frame);
-    this.timer = null;
-    this.counter();
-  };
-  numberCounter.prototype.counter = function() {
-      var self = this;
-      this.diff = this.target_count - this.count;
-  
-      if(this.diff > 0) {
-          self.count += Math.ceil(this.diff / 5);
-      }
-  
-      this.target_frame.innerHTML = this.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  
-      if(this.count < this.target_count) {
-          this.timer = setTimeout(function() { self.counter(); }, 20);
-      } else {
-          clearTimeout(this.timer);
-      }
-  };
-
-  new numberCounter("counter3", 99999);
-  new numberCounter("counter2", 1123456);
-  new numberCounter("counter1", 999999);
-
-
+          if (data < value) {
+            valueInfo[number].text.innerText = Math.ceil(data + time);
+            setTimeout(animate, valueInfo[number].aniSpeed);
+          } else {
+            valueInfo[number].text.innerText = numberWithCommas(value);
+          }
+        };
+        animate();
+      })
+      .on("leave", () => {
+        counter.innerText = 0;
+      })
+      .setClassToggle(counters, "active")
+      .addTo(new ScrollMagic.Controller());
+  });
 })();
