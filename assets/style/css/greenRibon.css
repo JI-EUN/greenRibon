@@ -355,6 +355,9 @@ header .d-flex .gnb a:first-child {
 header .d-flex .gnb a:hover {
   color: #ffffff;
 }
+header .d-flex .gnb a.active {
+  color: #ffffff;
+}
 header.scroll-active {
   background-color: #ffffff;
   border-bottom: 1px solid #dfdfdf;
@@ -364,6 +367,9 @@ header.scroll-active .logo a {
   background: url("/assets/img/header_logo_active.svg") no-repeat;
 }
 header.scroll-active .d-flex .gnb a:hover {
+  color: #000000;
+}
+header.scroll-active .d-flex .gnb a.active {
   color: #000000;
 }
 
@@ -481,7 +487,7 @@ header.scroll-active .d-flex .gnb a:hover {
     margin-bottom: 40px;
     color: #000000;
   }
-  .gnb-open header .gnb-wrap .gnb a:hover {
+  .gnb-open header .gnb-wrap .gnb a:hover, .gnb-open header .gnb-wrap .gnb a.active {
     color: #29AD37;
   }
 }

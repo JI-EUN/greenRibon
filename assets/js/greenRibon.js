@@ -19,8 +19,18 @@
     }
   });
 
-  //모바일 gnb
   const gnbLinks = document.querySelectorAll(".gnb a");
+  for (let i = 0; i < gnbLinks.length; i++) {
+    gnbLinks[i].onclick = function () {
+      var c = 0;
+      while (c < gnbLinks.length) {
+        gnbLinks[c++].className = "";
+      }
+      gnbLinks[i].className = "active";
+    };
+  }
+
+  //모바일 gnb
   gnbLinks.forEach(function (gnbLink) {
     gnbLink.addEventListener("click", function () {
       if (gnbBtn.classList.contains("open")) {
@@ -145,6 +155,7 @@
 
   //main Motion
   const spyEls = document.querySelectorAll(".scroll-spy");
+  const mainSections = document.querySelectorAll(".gnb-link-active");
   spyEls.forEach(function (spyEl) {
     new ScrollMagic.Scene({
       triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
@@ -154,11 +165,21 @@
       .addTo(new ScrollMagic.Controller());
   });
 
+  mainSections.forEach(function (mainSection, i) {
+    let height = mainSection.clientHeight;
+    new ScrollMagic.Scene({
+      duration: height,
+      triggerElement: mainSection, // 보여짐 여부를 감시할 요소를 지정
+      triggerHook: 0.5,
+    })
+      .setClassToggle(gnbLinks[i], "active")
+      .addTo(new ScrollMagic.Controller());
+  });
+  //숫자 카운트 animation
   function numberWithCommas(n) {
     var parts = n.toString().split(".");
     return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-
   const valueInfo = [
     {
       text: document.querySelector(".goals-nums .num1"),
@@ -189,7 +210,7 @@
   counters.forEach(function (counter, number) {
     new ScrollMagic.Scene({
       triggerElement: counter, // 보여짐 여부를 감시할 요소를 지정
-      triggerHook: 0.9,
+      triggerHook: 1,
       reverse: false,
     })
       .on("enter", () => {

@@ -14,7 +14,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js" integrity="sha512-lZACdYsy0W98dOcn+QRNHDxFuhm62lfs8qK5+wPp7X358CN3f+ml49HpnwzTiXFzETs4++fADePDI+L2zwlm7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a5ebdfa9f3075fb7538be56a86928cc1"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a5ebdfa9f3075fb7538be56a86928cc1"></script>
     <script src="/assets/js/greenRibon.js" defer></script>
 </head>
 <body>
@@ -31,25 +32,25 @@
             </div>
             <div class="gnb-wrap">
                 <nav class="gnb">
-                    <a href="#main">그린리본</a>
-                    <a href="#goal">목표</a>
-                    <a href="#business">사업</a>
-                    <a href="#history">연혁</a>
-                    <a href="#news">뉴스</a>
-                    <a href="#contact">문의</a>
+                    <a class="gnb-link" href="#main" id="main-link">그린리본</a>
+                    <a class="gnb-link" href="#goal" id="goal-link">목표</a>
+                    <a class="gnb-link" href="#business" id="business-link">사업</a>
+                    <a class="gnb-link" href="#history" id="history-link">연혁</a>
+                    <a class="gnb-link" href="#news" id="news-link">뉴스</a>
+                    <a class="gnb-link" href="#contact" id="contact-link">문의</a>
                 </nav>
             </div>
         </div>
     </header>
     <div class="">
-        <section class="main-section scroll-spy" id="main">
-            <h2 class="text-center">
+        <section class="main-section scroll-spy gnb-link-active" id="main">
+            <h2 class="text-center main-text">
                 <div class="animate-hidden-box"><span class="back-to-position to-top d-block">마이데이터를 기반으로</span></div>
                 <div class="animate-hidden-box"><span class="back-to-position to-top d-block  delay-4s">보험산업의 혁신을 리드합니다.</span></div>
             </h2>
             <i class="icon-scroll">스크롤</i>
         </section>
-        <section class="main-goals scroll-spy" id="goal">
+        <section class="main-goals scroll-spy gnb-link-active" id="goal">
             <div class="goals-text container">
                 <h3 class="main-point-font">그린리본은 <br/> <span class="main-color-font">목표</span>를 가지고 움직입니다. </h3>
                 <ul>
@@ -106,7 +107,7 @@
                 </div>
             </div>
         </section> 
-        <section class="main-business scroll-spy" id="business">
+        <section class="main-business scroll-spy gnb-link-active" id="business">
             <div class="container">
                 <h3 class="main-point-font">보험산업에서<br/>그린리본만의 <span class="main-color-font">기술</span>로 이끌어갑니다.</h3>
                 <div class="tab_menu">
@@ -202,7 +203,7 @@
                 </div>
             </div>
         </section>
-        <section class="main-history scroll-spy" id="history">
+        <section class="main-history scroll-spy gnb-link-active" id="history">
             <h3 class="main-point-font container">그린리본은 <br/><span class="main-color-font">매년 새로운 모습</span>을 그려나갑니다.</h3>
             <div class="tab_menu">
                 <div class="border-box">
@@ -274,7 +275,7 @@
                 </div>
             </div>
         </section>
-        <section class="main-news scroll-spy" id="news">
+        <section class="main-news scroll-spy gnb-link-active" id="news">
             <div class="container">
                 <h3 class="main-point-font"><span class="main-color-font">언론</span>에서<br/>말하는 그린리본</h3>
                 <div class="news-lists">
@@ -326,7 +327,7 @@
                 </ul>
             </div>
         </section>
-        <section class="main-contact scroll-spy" id="contact">
+        <section class="main-contact scroll-spy gnb-link-active" id="contact">
             <div class="container">
                 <h3 class="main-point-font">그린리본과 <span class="main-color-font">함께</span>할<br/>여러분을 기다리고 있습니다.</h3>
                 <div class="maps">
