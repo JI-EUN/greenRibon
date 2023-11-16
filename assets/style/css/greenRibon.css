@@ -363,8 +363,7 @@ header.scroll-active {
   border-bottom: 1px solid #dfdfdf;
 }
 header.scroll-active .logo a {
-  background-size: cover;
-  background: url("/assets/img/header_logo_active.svg") no-repeat;
+  background: url("/assets/img/header_logo_active.png") no-repeat;
 }
 header.scroll-active .d-flex .gnb a:hover {
   color: #000000;
@@ -906,7 +905,11 @@ footer .footer-copy-wrap .sns a:last-child {
   width: 160px;
   height: 48px;
   border: 1px solid #2E2C2F;
+  transition: background-color 0.3s ease-in-out;
   border-radius: 8px;
+}
+.main-business .tab-contents .tab-content.b2c-cont .appStoreBtns a:hover, .main-business .tab-contents .tab-content.b2c-cont .appStoreBtns a:active {
+  background-color: #F4F4F4;
 }
 .main-business .tab-contents .tab-content.b2c-cont .appStoreBtns a:first-child {
   margin-right: 32px;
@@ -1264,6 +1267,9 @@ footer .footer-copy-wrap .sns a:last-child {
     margin-bottom: 10px;
     font-size: 16px;
     line-height: 21.92px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .main-news .news-lists a span {
     font-size: 12px;

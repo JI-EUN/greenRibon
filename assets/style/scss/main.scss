@@ -273,7 +273,12 @@
                         width: 160px;
                         height: 48px;
                         border:1px solid #2E2C2F;
+                        transition: background-color .3s ease-in-out;
                         border-radius: 8px;
+                        &:hover,
+                        &:active{
+                            background-color: #F4F4F4;
+                        }
                         &:first-child{
                             margin-right: 32px;
                         }
@@ -675,6 +680,9 @@
                     margin-bottom:10px;
                     font-size:16px;
                     line-height: 21.92px ;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                 }
                 span{
                     font-size: 12px;
