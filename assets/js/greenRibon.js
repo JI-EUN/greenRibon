@@ -1,5 +1,6 @@
 (() => {
   const headerElem = document.querySelector("header");
+  const gnbLinks = document.querySelectorAll(".gnb a");
   window.addEventListener("scroll", function () {
     if (window.scrollY > 20) {
       headerElem.classList.add("scroll-active");
@@ -18,17 +19,6 @@
       document.body.classList.remove("gnb-open");
     }
   });
-
-  const gnbLinks = document.querySelectorAll(".gnb a");
-  for (let i = 0; i < gnbLinks.length; i++) {
-    gnbLinks[i].onclick = function () {
-      var c = 0;
-      while (c < gnbLinks.length) {
-        gnbLinks[c++].className = "";
-      }
-      gnbLinks[i].className = "active";
-    };
-  }
 
   //모바일 gnb
   gnbLinks.forEach(function (gnbLink) {
