@@ -11,7 +11,7 @@ header{
             width: 154px;
             height: 40px;
             text-indent: -99999px;
-            background: url('/assets/img/logo.png');
+            background: url('/assets/img/logo.png') no-repeat;
         }
     }
     .hamburger-icon{
@@ -48,6 +48,7 @@ header{
         .logo{
             a{
                 background: url('/assets/img/header_logo_active.png') no-repeat;
+                background-size: contain;
             }
         }
         .d-flex .gnb a{
@@ -141,7 +142,8 @@ header{
             a{
                 width: 123px;
                 height: 24px;
-                background: url('/assets/img/logo-m.png') no-repeat 50%;
+                //background: url('/assets/img/logo-m.png') no-repeat 50%;
+                background-size: contain;
             }
         }
         &.scroll-active{

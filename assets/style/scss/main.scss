@@ -602,6 +602,11 @@
     }
     .main-business{
         padding:100px 0 0;
+        .main-point-font{
+            br{
+                display: none;
+            }
+        }
         .tab-btns{
             margin-top:40px;
             li{
@@ -623,7 +628,7 @@
                 &.b2c-cont{
                     .main-color-font{
                         justify-content: center;
-                        width: 156px;
+                        width: 194px;
                         line-height: 39px;;
                         height: 41px;;
                         border:1px solid $main-color;
@@ -668,7 +673,7 @@
                 padding:0 0 60px 0;
                 li{
                     margin-top:32px;
-                    span{
+                    >span{
                         font-size: 16px;
                         line-height: 21.92px;
                         width: 35px;

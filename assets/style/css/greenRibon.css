@@ -330,7 +330,7 @@ header .logo a {
   width: 154px;
   height: 40px;
   text-indent: -99999px;
-  background: url("/assets/img/logo.png");
+  background: url("/assets/img/logo.png") no-repeat;
 }
 header .hamburger-icon {
   display: none;
@@ -364,6 +364,7 @@ header.scroll-active {
 }
 header.scroll-active .logo a {
   background: url("/assets/img/header_logo_active.png") no-repeat;
+  background-size: contain;
 }
 header.scroll-active .d-flex .gnb a:hover {
   color: #000000;
@@ -449,7 +450,7 @@ header.scroll-active .d-flex .gnb a.active {
   header .logo a {
     width: 123px;
     height: 24px;
-    background: url("/assets/img/logo-m.png") no-repeat 50%;
+    background-size: contain;
   }
   header.scroll-active .hamburger-icon span {
     background-color: #000000;
@@ -1193,6 +1194,9 @@ footer .footer-copy-wrap .sns a:last-child {
   .main-business {
     padding: 100px 0 0;
   }
+  .main-business .main-point-font br {
+    display: none;
+  }
   .main-business .tab-btns {
     margin-top: 40px;
   }
@@ -1213,7 +1217,7 @@ footer .footer-copy-wrap .sns a:last-child {
   }
   .main-business .tab-contents .tab-content.b2c-cont .main-color-font {
     justify-content: center;
-    width: 156px;
+    width: 194px;
     line-height: 39px;
     height: 41px;
     border: 1px solid #29AD37;
@@ -1255,7 +1259,7 @@ footer .footer-copy-wrap .sns a:last-child {
   .main-history .tab-contents ol li {
     margin-top: 32px;
   }
-  .main-history .tab-contents ol li span {
+  .main-history .tab-contents ol li > span {
     font-size: 16px;
     line-height: 21.92px;
     width: 35px;
