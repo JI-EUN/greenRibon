@@ -63,7 +63,7 @@
     .goals-text{
         padding-bottom:100px;
         ul{
-            width: 736px;
+            width: 832px;
             margin:120px auto 0;
             li{
                 margin-top:100px;
@@ -72,7 +72,8 @@
                 }
                 >div{
                     width: 288px;
-                    position: relative;
+                    position: relative;    
+                    flex-shrink: 0;
                     strong{
                         font-weight: 700;
                         font-size: 40px;
@@ -354,11 +355,20 @@
                     line-height: 27.4px;
                     margin-top:40px;
                     letter-spacing: -0.4px;
-                    span{
+                    >span{
                         width: 40px;;
                         text-align: right;
                         margin-right: 34px;
                         flex-shrink: 0;
+                    }
+                    >p{
+                        >span{
+                            margin-bottom:24px;
+                            display: block;
+                            &:last-child{
+                                margin-bottom:0;
+                            }
+                        }
                     }
                 }
             }
@@ -446,6 +456,7 @@
         font-weight: 700;
         font-size: 24px;
         line-height: 32px;
+        letter-spacing: -0.4px;
     }
     .eng-adderss{
         color:#777;
@@ -462,6 +473,7 @@
                 width: 448px;
                 .map{
                     height: 220px;
+                    margin-top:24px;
                     background: $footer-gray;
                 }
             }

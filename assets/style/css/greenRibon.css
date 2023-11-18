@@ -709,7 +709,7 @@ footer .footer-copy-wrap .sns a:last-child {
   padding-bottom: 100px;
 }
 .main-goals .goals-text ul {
-  width: 736px;
+  width: 832px;
   margin: 120px auto 0;
 }
 .main-goals .goals-text ul li {
@@ -721,6 +721,7 @@ footer .footer-copy-wrap .sns a:last-child {
 .main-goals .goals-text ul li > div {
   width: 288px;
   position: relative;
+  flex-shrink: 0;
 }
 .main-goals .goals-text ul li > div strong {
   font-weight: 700;
@@ -976,11 +977,18 @@ footer .footer-copy-wrap .sns a:last-child {
   margin-top: 40px;
   letter-spacing: -0.4px;
 }
-.main-history .tab-contents ol li span {
+.main-history .tab-contents ol li > span {
   width: 40px;
   text-align: right;
   margin-right: 34px;
   flex-shrink: 0;
+}
+.main-history .tab-contents ol li > p > span {
+  margin-bottom: 24px;
+  display: block;
+}
+.main-history .tab-contents ol li > p > span:last-child {
+  margin-bottom: 0;
 }
 
 .main-news {
@@ -1062,6 +1070,7 @@ footer .footer-copy-wrap .sns a:last-child {
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
+  letter-spacing: -0.4px;
 }
 .main-contact .eng-adderss {
   color: #777;
@@ -1081,6 +1090,7 @@ footer .footer-copy-wrap .sns a:last-child {
 }
 .main-contact .maps ul li .map {
   height: 220px;
+  margin-top: 24px;
   background: #777777;
 }
 .main-contact .maps > div {
