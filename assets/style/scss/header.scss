@@ -62,6 +62,20 @@ header{
     }
 }
 
+@media screen and (max-width:$screen-xs-pc){
+    header{
+        .d-flex {
+            .gnb{
+                a{
+                    font-size: 18px;
+                    margin-left:20px;
+                }
+            }
+        }
+        
+    }
+}
+
 @media screen and (max-width:$screen-mobile){
     header{
         padding:16px 0;
