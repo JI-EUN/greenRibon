@@ -69,6 +69,56 @@ img{
     color:$main-color;
 }
 
+//loading
+
+//loading
+.before-load{
+    .wrapper{
+        opacity: 0;
+    }
+    .loading{
+        opacity: 1;
+    }
+}
+.loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 4;
+	background: white;
+	opacity: 0;
+	transition: 0.5s;
+    .loading-circle {
+        width: 54px;
+        height: 54px;
+        animation: loading-spin 3s infinite;
+        circle {
+            stroke: $main-color;
+            stroke-width: 4;
+            /* getTotalLength()로 stroke의 길이를 얻어올 수 있음 */
+            stroke-dasharray: 157, 157;
+            stroke-dashoffset: 0;
+            fill: transparent;
+            animation: loading-circle-ani 1s infinite;
+            /* transition: 1s; */
+        }
+    }
+
+}
+@keyframes loading-spin {
+	100% { transform: rotate(360deg); }
+}
+@keyframes loading-circle-ani {
+	0% { stroke-dashoffset: 157; }
+	75% { stroke-dashoffset: -147; }
+	100% { stroke-dashoffset: -157; }
+}
+
 //탭 컨텐츠
 .tab-btns{
     display: flex;

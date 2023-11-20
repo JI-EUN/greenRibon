@@ -143,85 +143,92 @@
 
   marker2.setMap(map2);
 
-  //main Motion
-  const spyEls = document.querySelectorAll(".scroll-spy");
-  const mainSections = document.querySelectorAll(".gnb-link-active");
-  spyEls.forEach(function (spyEl) {
-    new ScrollMagic.Scene({
-      triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
-      triggerHook: 0.5,
-    })
-      .setClassToggle(spyEl, "show")
-      .addTo(new ScrollMagic.Controller());
+  //animation
+  window.addEventListener("load", () => {
+    document.body.classList.remove("before-load");
   });
-
-  mainSections.forEach(function (mainSection, i) {
-    let height = mainSection.clientHeight;
-    new ScrollMagic.Scene({
-      duration: height,
-      triggerElement: mainSection, // 보여짐 여부를 감시할 요소를 지정
-      triggerHook: 0.5,
-    })
-      .setClassToggle(gnbLinks[i], "active")
-      .addTo(new ScrollMagic.Controller());
-  });
-  //숫자 카운트 animation
-  function numberWithCommas(n) {
-    var parts = n.toString().split(".");
-    return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-  const valueInfo = [
-    {
-      text: document.querySelector(".goals-nums .num1"),
-      vlaue: document
-        .querySelector(".goals-nums .num1")
-        .getAttribute("data-num"),
-      speed: 100,
-      aniSpeed: 7,
-    },
-    {
-      text: document.querySelector(".goals-nums .num2"),
-      vlaue: document
-        .querySelector(".goals-nums .num2")
-        .getAttribute("data-num"),
-      speed: 100,
-      aniSpeed: 7,
-    },
-    {
-      text: document.querySelector(".goals-nums .num3"),
-      vlaue: document
-        .querySelector(".goals-nums .num3")
-        .getAttribute("data-num"),
-      speed: 200,
-      aniSpeed: 0.5,
-    },
-  ];
-  const counters = document.querySelectorAll(".goals-nums .count-num");
-  counters.forEach(function (counter, number) {
-    new ScrollMagic.Scene({
-      triggerElement: counter, // 보여짐 여부를 감시할 요소를 지정
-      triggerHook: 1,
-      reverse: false,
-    })
-      .on("enter", () => {
-        const animate = () => {
-          const value = +valueInfo[number].vlaue;
-          const data = +valueInfo[number].text.innerText;
-          const time = value / valueInfo[number].speed;
-
-          if (data < value) {
-            valueInfo[number].text.innerText = Math.ceil(data + time);
-            setTimeout(animate, valueInfo[number].aniSpeed);
-          } else {
-            valueInfo[number].text.innerText = numberWithCommas(value);
-          }
-        };
-        animate();
+  document.querySelector(".loading").addEventListener("transitionend", (e) => {
+    document.body.removeChild(e.currentTarget);
+    //main Motion
+    const spyEls = document.querySelectorAll(".scroll-spy");
+    const mainSections = document.querySelectorAll(".gnb-link-active");
+    spyEls.forEach(function (spyEl) {
+      new ScrollMagic.Scene({
+        triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+        triggerHook: 0.5,
       })
-      .on("leave", () => {
-        counter.innerText = 0;
+        .setClassToggle(spyEl, "show")
+        .addTo(new ScrollMagic.Controller());
+    });
+
+    mainSections.forEach(function (mainSection, i) {
+      let height = mainSection.clientHeight;
+      new ScrollMagic.Scene({
+        duration: height,
+        triggerElement: mainSection, // 보여짐 여부를 감시할 요소를 지정
+        triggerHook: 0.5,
       })
-      .setClassToggle(counters, "active")
-      .addTo(new ScrollMagic.Controller());
+        .setClassToggle(gnbLinks[i], "active")
+        .addTo(new ScrollMagic.Controller());
+    });
+    //숫자 카운트 animation
+    function numberWithCommas(n) {
+      var parts = n.toString().split(".");
+      return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    const valueInfo = [
+      {
+        text: document.querySelector(".goals-nums .num1"),
+        vlaue: document
+          .querySelector(".goals-nums .num1")
+          .getAttribute("data-num"),
+        speed: 100,
+        aniSpeed: 7,
+      },
+      {
+        text: document.querySelector(".goals-nums .num2"),
+        vlaue: document
+          .querySelector(".goals-nums .num2")
+          .getAttribute("data-num"),
+        speed: 100,
+        aniSpeed: 7,
+      },
+      {
+        text: document.querySelector(".goals-nums .num3"),
+        vlaue: document
+          .querySelector(".goals-nums .num3")
+          .getAttribute("data-num"),
+        speed: 200,
+        aniSpeed: 0.5,
+      },
+    ];
+    const counters = document.querySelectorAll(".goals-nums .count-num");
+    counters.forEach(function (counter, number) {
+      new ScrollMagic.Scene({
+        triggerElement: counter, // 보여짐 여부를 감시할 요소를 지정
+        triggerHook: 1,
+        reverse: false,
+      })
+        .on("enter", () => {
+          const animate = () => {
+            const value = +valueInfo[number].vlaue;
+            const data = +valueInfo[number].text.innerText;
+            const time = value / valueInfo[number].speed;
+
+            if (data < value) {
+              valueInfo[number].text.innerText = Math.ceil(data + time);
+              setTimeout(animate, valueInfo[number].aniSpeed);
+            } else {
+              valueInfo[number].text.innerText = numberWithCommas(value);
+            }
+          };
+          animate();
+        })
+        .on("leave", () => {
+          counter.innerText = 0;
+        })
+        .setClassToggle(counters, "active")
+        .addTo(new ScrollMagic.Controller());
+    });
   });
 })();
